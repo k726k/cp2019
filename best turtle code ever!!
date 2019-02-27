@@ -1,69 +1,73 @@
 import turtle
 t = turtle.Pen()
 t.speed(100)
+turtle.colormode(255)
+def printColor():
+  color=pickAColor()
+  print (color)
 
+def color():
+    global Red, Green, Blue, pentype
+    print(" How much red would you like? input a number 1-255")
+    Red = int(input())
+    print("How much green would you like? input a number 1-255")
+    Green = int(input())
+    print("How much blue would you like? input a number 1-255")
+    Blue = int(input())
+    pentype = (Red, Green, Blue)
+    
 def circle():
+    color()
+    print (pentype)
+    t.pencolor(pentype)
     for x in range (200):
-        t.pencolor((r, g, b))
-        t.circle
+        t.circle(x)
+        
         t.left(91)
 
 def triangle():
+    color()
+    print (pentype)
+    t.pencolor(pentype)
     for x in range (200):
-        t.pencolor("red")
+        t.forward(x)
+        t.right(120)
+
+def square():
+    color()
+    print (pentype)
+    for x in range (200):
+        t.pencolor(pentype)
         t.forward(x)
         t.right(91)
 
-def square():
-    for x in range (200):
-        t.pencolor("blue")
-        t.forward(x)
-        t.right(90)
-
 def pentagon():
+    color()
+    print (pentype)
+    t.pencolor(pentype)
     for x in range(200):
-        t.pencolor("black")
         t.forward(x)
         t.right(98)
 
 def hexagon():
+    color()
+    print (pentype)
+    t.pencolor(pentype)
     for x in range(200):
-        t.pencolor("orange")
         t.forward(x)
         t.right(88)
-
-##def colors(x):
-##  ret = []
-##  r = int(random.random() * 256)
-##  g = int(random.random() * 256)
-##  b = int(random.random() * 256)
-##  step = 256 / x
-##  for i in range(x):
-##    r += step
-##    g += step
-##    b += step
-##    r = int(r) % 256
-##    g = int(g) % 256
-##    b = int(b) % 256
-##    ret.append((r,g,b)) 
-##  return ret
 
 
 while True:
 #define the shapes you can choose from
     shape = ["1 circle", "2 triangle", "3 square", "4 pentagon", "5 hexagon"]
-    #drawing = print("what would you like to draw? Pick a shape 1-5.." + (shape))
     print("what would you like to draw? ")
     drawing = input(shape)
     print("what color do you want?")
-
-    r = str(input("How much red do you want? Choose a number 1-255."))
-    g = str(input("How much green do you want? Choose a number 1-255."))
-    b = str(input("How much bliue do you want? Choose a number 1-255."))
-    
+    #color()
     
     if drawing == "1":
-        circle()
+        circle() 
     if drawing == "2":
         triangle()
     if drawing == "3":
